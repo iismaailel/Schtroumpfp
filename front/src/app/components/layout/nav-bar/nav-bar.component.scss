@@ -1,0 +1,27 @@
+.topnav {
+	background: linear-gradient(to right, #3b4650, #647688);
+	//background-size: contain;
+	height: 56px;
+	
+	
+}
+.secnav {
+	height: 50px;
+}
+
+.logo {
+	//overflow: hidden;
+	//vertical-align: middle;
+	position: relative;
+	left:0px;
+	top: -85px;
+	z-index: 10;
+}
+
+ul {
+	margin-left: 25px;
+}
+
+li {
+	padding-right: 30px;
+}

@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="col-md-6 mx-auto my-4">
+    <section class="form-elegant">
+      <mdb-card>
+        <mdb-card-body class="mx-4">
+          <!--Header-->
+          <div class="text-center">
+            <h3 class="dark-grey-text mb-5">
+              <strong>Sign in</strong>
+            </h3>
+          </div>
+
+          <form 
+          *ngIf="!isLoggedIn"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate >
+
+            <div class="md-form form-sm">
+              <input mdbInput type="text" id="form1" class="form-control form-control-sm"  name="username"
+              [(ngModel)]="form.username"
+              required
+              #username="ngModel">
+              <label for="form1" class="dark-grey-text">Username</label>
+              <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="f.submitted && username.invalid">
+              Username is required!
+              </div>
+            </div>
+
+            <div class="md-form form-sm">
+              <input mdbInput type="password" id="form1" class="form-control form-control-sm" name="password"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel">
+              <label for="form1" class="dark-grey-text">Password</label>
+              <p class="font-small text-danger d-flex justify-content-end">Forgot
+                <a href="#" class="text-danger ml-1"> Password?</a>
+              </p>
+              <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="f.submitted && password.invalid"
+            >
+              <div *ngIf="password.errors.required">Password is required</div>
+              <div *ngIf="password.errors.minlength">
+                Password must be at least 6 characters
+              </div>
+            </div>
+            </div>
+
+
+            <div class="text-center mb-3">
+              <button mdbBtn block="true" rounded="true" class="z-depth-1a waves-light juicy-peach-gradient" mdbWavesEffect>Sign in</button>
+            </div>
+
+            <div class="form-group">
+              <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="f.submitted && isLoginFailed"
+              >
+                Login failed: {{ errorMessage }}
+              </div>
+            </div>
+            
+          </form>
+          <div class="alert alert-success" *ngIf="isLoggedIn">
+            Logged in as {{ roles }}.
+          </div>
+     
+
+
+          <!--Body-->
+
+       
+          <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> Contact us on :</p>
+
+          <div class="row my-3 d-flex justify-content-center">
+            <!--Facebook-->
+            <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+              <mdb-icon fab icon="facebook" class="text-danger text-center"></mdb-icon>
+            </button>
+            <!--Twitter-->
+            <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+                <mdb-icon fab icon="twitter" class="text-danger"></mdb-icon>
+            </button>
+            <!--Google +-->
+            <button type="button" mdbBtn color="white" rounded="true" class="z-depth-1a waves-light" mdbWavesEffect>
+                <mdb-icon fab fab icon="google-plus" class="text-danger"></mdb-icon>
+            </button>
+          </div>
+        </mdb-card-body>
+        <!--Footer-->
+        <div class="modal-footer mx-5 pt-3 mb-1">
+          <p class="font-small grey-text d-flex justify-content-end">Don't have an account?
+            <a [routerLink]="['/auth/signup']" class="text-danger ml-1"> Sign Up</a>
+          </p>
+        </div>
+      </mdb-card>
+
+    </section>
+  </div>
+</div>

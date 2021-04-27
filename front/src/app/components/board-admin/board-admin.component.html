@@ -1,0 +1,70 @@
+<div class="container">
+  
+  
+
+<!--Section: Features v.1-->
+<section class="text-center">
+
+  <!--Section heading-->
+  <h2 class="h1 py-5 font-weight-bold">relevant values ?</h2>
+
+  <!--Grid row-->
+  <div class="row">
+
+    <!--Grid column-->
+    <div class="col-md-3">
+      <mdb-icon fas icon="chart-area" size="3x" class="red-text"></mdb-icon>
+      <h5 class="font-weight-bold mt-3">Winning streak</h5>
+      <p class="grey-text">50</p>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-md-3">
+      <mdb-icon fas icon="chart-area" size="3x" class="red-text"></mdb-icon>
+      <h5 class="font-weight-bold mt-3">loss streak</h5>
+      <p class="grey-text">50</p>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-md-3">
+      <mdb-icon fas icon="chart-area" size="3x" class="cyan-text"></mdb-icon>
+      <h5 class="font-weight-bold mt-3">Best wins</h5>
+      <p class="grey-text">50</p>
+    </div>
+    <!--Grid column-->
+
+    <div class="col-md-3">
+      <mdb-icon fas icon="chart-area" size="3x" class="cyan-text"></mdb-icon>
+      <h5 class="font-weight-bold mt-3">Best ranking</h5>
+      <p class="grey-text">50</p>
+    </div>
+    <!--Grid column-->
+
+  </div>
+  <!--Grid row-->
+
+</section>
+<!--Section: Features v.1-->
+
+<!--Section: Features v.1-->
+<section class="text-center">
+<!--Section heading-->
+<h2 class="h1 py-5 font-weight-bold">progress curves ?</h2>
+
+<div style="display: block">
+  <canvas mdbChart
+      [chartType]="chartType"
+      [datasets]="chartDatasets"
+      [labels]="chartLabels"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+  </canvas>
+</div>
+</section>
+
+</div>

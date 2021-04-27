@@ -1,0 +1,34 @@
+<div class=" container section pb-3 text-center">
+  <h2 class="h1-responsive font-weight-bold my-5">Schtroumpfs</h2>
+	<div class="container">
+			<div class="row">
+				<table class="table" matSort >
+
+					<thead class="thead-light">
+						<tr>
+              <th scope="col"> name</th>
+              <th scope="col"> age</th>
+              <th scope="col">nourriture</th>
+              <th scope="col">famille</th>
+              <th scope="col">options</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor ="let schtroumpf of schtroumpfs">
+              <td>{{schtroumpf.name}}</td>
+              <td>{{schtroumpf.age}}</td>
+              <td>{{schtroumpf.nourriture}}</td>
+              <td>{{schtroumpf.famille}}</td>
+
+							<td>
+                <!--<button type="button" class="btn btn-primary" >Edit</button>&nbsp;&nbsp; -->
+                <button type="button" class="btn btn-danger" (click)="deleteSchtroumpf(schtroumpf._id)">Delete</button>&nbsp;&nbsp;
+			        </td>
+						</tr>
+					</tbody>
+				</table>
+
+         <button mdbBtn color="info" size="sm" class="waves-light" type="button" (click)="gotoaddSchtroumpf()" >Add a new schtroumpf</button>
+			</div>
+		</div>
+</div>

@@ -1,0 +1,39 @@
+
+  <nav class="navbar nav navbar-inverse navbar-light topnav" >
+    <img width="3.5%"  src="../../../../assets/images/Logo-Officiel.png">
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <div class="collapse navbar-collapse " id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home"><fa-icon [icon]="faHome"></fa-icon>
+          Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="addstr">Add Schtroumpf</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="liststr">Liste Schtroumpf </a>
+      </li>
+    </ul>
+
+  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <li class="nav-item">
+      <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+    </li>
+    <li class="nav-item">
+      <a href="/login" class="nav-link" routerLink="login">Sign In</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <li class="nav-item">
+      <a href="/profile" class="nav-link" routerLink="profile">Welcome {{ username }}</a>
+    </li>
+    <li class="nav-item">
+      <a href class="nav-link" (click)="logout()">LogOut</a>
+    </li>
+  </ul>
+
+  </div>
+</nav>
